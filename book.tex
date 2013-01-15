@@ -1,0 +1,204 @@
+\documentclass[12pt]{memoir}
+% pdflatex appears to have better hyphenation than xelatex
+% also xelatex doesn't like the copyright character
+
+% need markboth for header to appear correctly
+% better hyphenation, etc
+\usepackage[activate={true,nocompatibility},protrusion=true,expansion=true]{microtype}
+% Set a trade-size page.
+\setstocksize{9in}{6in}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\setulmarginsandblock{0.75in}{0.75in}{*}
+\setlrmarginsandblock{0.8in}{0.55in}{*}
+\setheaderspaces{0.5in}{*}{*}
+\checkandfixthelayout
+
+
+% get the copyright character working
+\usepackage[utf8]{inputenc}
+
+\usepackage{makeidx}
+\makeindex
+
+\usepackage{tgpagella}
+
+% dropped caps
+\usepackage{type1cm}
+\usepackage{lettrine}
+
+% don't print trivial gripes
+\hbadness = 5000
+
+% avoid widows, orphans
+\clubpenalty=10000
+\widowpenalty=10000
+\raggedbottom
+
+% clickable hyperlinks
+\usepackage[linktocpage=true]{hyperref}
+
+
+
+\newenvironment{dedicationpage}{%
+\clearpage
+ {\pagestyle{empty}\cleardoublepage}%
+ \thispagestyle{empty}%
+ \null\vskip1.175in%
+ \centering\normalfont}
+
+
+
+\begin{document}
+
+% half title page
+\pagestyle{empty}
+\begin{center}
+\huge{The Title}
+\end{center}
+\clearpage
+
+% also available - on verso
+
+% full title
+\pagestyle{empty}
+\begin{center}
+\huge{The Title}\\
+\vskip25pt
+Subtitle\\
+Version\\
+Author
+\end{center}
+\null\vfill
+\begin{center}
+Publisher
+\end{center}
+\clearpage
+
+%copyright
+\null\vfill
+\begin{flushleft}
+COPYRIGHT © 2012
+\bigskip
+ALL RIGHTS RESERVED BY INDIVIDUAL AUTHORS
+\end{flushleft}
+\clearpage
+
+% dedication
+
+%% \dedicationpage{Here is my dedication page take two}
+\pagestyle{empty}
+%\cleardoublepage
+\thispagestyle{empty}%
+\null\vskip1.175in%
+{\centering\normalfont
+This is the text of a Dedication. Its title is not numbered in the table of contents. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis justo ut justo porttitor at rutrum libero accumsan. In luctus sodales mi in sollicitudin. In at diam quis purus fringilla volutpat. Praesent sodales condimentum tortor, eget condimentum libero ultrices a. Nullam vitae velit non libero consectetur fermentum nec ac dolor. Suspendisse magna justo, euismod sit amet bibendum id, placerat sed metus. Pellentesque in metus sit amet justo luctus vestibulum. Vestibulum vitae tortor sed lectus tincidunt faucibus nec mattis velit. Sed sollicitudin, lorem vestibulum commodo sagittis, odio purus pretium metus, et luctus orci ligula in est. Sed in faucibus ligula. Mauris laoreet gravida pretium. Curabitur vitae dui vulputate odio rhoncus sagittis ut ut dolor. Praesent imperdiet euismod ligula nec consectetur. Nulla ut dui ut justo tempor vulputate. Proin felis magna, mattis vel cursus vel, fringilla ut dui. Curabitur scelerisque tincidunt laoreet.
+
+}
+
+% skip a page
+
+\frontmatter
+
+% need to remove CONTENTS from TOC
+\tableofcontents
+
+\mainmatter
+
+\chapter*{Foreword}
+\addcontentsline{toc}{chapter}{Foreword}
+\markboth{Foreward}{Foreward}
+This is the text of a Forward. Its title is not numbered in the table of contents. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis justo ut justo porttitor at rutrum libero accumsan. In luctus sodales mi in sollicitudin. In at diam quis purus fringilla volutpat. Praesent sodales condimentum tortor, eget condimentum libero ultrices a. Nullam vitae velit non libero consectetur fermentum nec ac dolor. Suspendisse magna justo, euismod sit amet bibendum id, placerat sed metus. Pellentesque in metus sit amet justo luctus vestibulum. Vestibulum vitae tortor sed lectus tincidunt faucibus nec mattis velit. Sed sollicitudin, lorem vestibulum commodo sagittis, odio purus pretium metus, et luctus orci ligula in est. Sed in faucibus ligula. Mauris laoreet gravida pretium. Curabitur vitae dui vulputate odio rhoncus sagittis ut ut dolor. Praesent imperdiet euismod ligula nec consectetur. Nulla ut dui ut justo tempor vulputate. Proin felis magna, mattis vel cursus vel, fringilla ut dui. Curabitur scelerisque tincidunt laoreet.
+
+Cras malesuada elementum condimentum. Donec lectus eros, mattis eget venenatis ullamcorper, ornare vel massa. Curabitur erat neque, pellentesque at sollicitudin ac, ornare nec sapien. Curabitur in velit sem, sit amet scelerisque libero. Duis vitae euismod diam. Morbi aliquet mauris ac dolor aliquet vel elementum est condimentum. Sed iaculis, nibh in feugiat elementum, dui purus laoreet erat, eget egestas risus tortor vel nisi. Vivamus vehicula purus quis lectus laoreet aliquam placerat metus tempus. Suspendisse bibendum dolor at eros pretium blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis fringilla dui, nec aliquet ante rhoncus at. Proin eget dictum ante. In hac habitasse platea dictumst. Cras bibendum adipiscing odio, vel mollis metus elementum at.
+
+\chapter{Normal Chapter}
+\lettrine{T}{his is a normal} chapter. That line was tweaked with lettrine. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis justo ut justo porttitor at rutrum libero accumsan. In luctus sodales mi in sollicitudin. In at diam quis purus fringilla volutpat. Praesent sodales condimentum tortor, eget condimentum libero ultrices a. Nullam vitae velit non libero consectetur fermentum nec ac dolor. Suspendisse magna justo, euismod sit amet bibendum id, placerat sed metus. Pellentesque in metus sit amet justo luctus vestibulum. Vestibulum vitae tortor sed lectus tincidunt faucibus nec mattis velit. Sed sollicitudin, lorem vestibulum commodo sagittis, odio purus pretium metus, et luctus orci ligula in est. Sed in faucibus ligula. Mauris laoreet gravida pretium. Curabitur vitae dui vulputate odio rhoncus sagittis ut ut dolor. Praesent imperdiet euismod ligula nec consectetur. Nulla ut dui ut justo tempor vulputate. Proin felis magna, mattis vel cursus vel, fringilla ut dui. Curabitur scelerisque tincidunt laoreet.
+
+\sidebar{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis justo ut justo porttitor at rutrum libero accumsan. In luctus sodales mi in sollicitudin. In at diam quis purus fringilla volutpat. Praesent sodales condimentum tortor, eget condimentum libero ultrices a.}
+
+Cras malesuada elementum condimentum. Donec lectus eros, mattis eget venenatis ullamcorper, ornare vel massa. Curabitur erat neque, pellentesque at sollicitudin ac, ornare nec sapien. Curabitur in velit sem, sit amet scelerisque libero. Duis vitae euismod diam. Morbi aliquet mauris ac dolor aliquet vel elementum est condimentum. Sed iaculis, nibh in feugiat elementum, dui purus laoreet erat, eget egestas risus tortor vel nisi. Vivamus vehicula purus quis lectus laoreet aliquam placerat metus tempus. Suspendisse bibendum dolor at eros pretium blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis fringilla dui, nec aliquet ante rhoncus at. Proin eget dictum ante. In hac habitasse platea dictumst. Cras bibendum adipiscing odio, vel mollis metus elementum at.
+
+Quisque ante neque, auctor nec viverra at, eleifend in justo. Maecenas augue nulla, tincidunt ac iaculis a, vehicula in ligula. Morbi vel purus felis, eu posuere metus. Phasellus quis tempus dui. Suspendisse potenti. Aliquam suscipit suscipit gravida. Maecenas a dui elit. Aenean congue neque metus, a suscipit est. Nam in orci lectus. Cras feugiat, ipsum porttitor aliquet ornare, leo dolor ultricies est, eu viverra velit sem sit amet erat. Donec nunc magna, sollicitudin at hendrerit et, auctor in tellus.
+
+Curabitur eget velit lacus, vitae dapibus felis. Nullam a velit nec arcu ultricies tincidunt. Donec laoreet diam eget magna laoreet egestas. Proin bibendum lacus lorem. Integer mollis auctor rutrum. Duis tincidunt faucibus orci at mollis. Aenean suscipit facilisis risus, vitae commodo lorem vulputate in. Sed a felis in sem vestibulum faucibus ac nec purus. Fusce auctor scelerisque pharetra. Morbi nibh metus, pellentesque id hendrerit at, pretium eget est. Phasellus rutrum, felis sed auctor sollicitudin, erat lectus pulvinar neque, a interdum sem ligula non nisl. Sed quam mi, dictum quis interdum vitae, eleifend a mi. Cras nec nulla in sem laoreet adipiscing.
+This is a normal chapter. It should be numbered.
+
+\section{Unixy embellishments}
+\label{rst/begpy:unixy-embellishments}
+On Unix platforms (Linux and OS X are two examples), files such as
+\code{hello.py} are often referred to as \emph{scripts}. A script is a
+program, but the term is often used to distinguish native code from
+interpreted code. In this case scripts are interpreted code, whereas
+the output from the compilation step of a language that compiles to
+machine code (such as C) is \emph{native code}.
+
+\begin{notice}{note}{Note:}
+It is not uncommon to hear about shell scripts, Perl scripts, Python
+scripts, etc. What is the difference between a Python script and a
+Python program? Nothing, really it is only semantics. A Python script
+usually refers to a Python program run from the command line,
+whereas a Python program is any program written in Python (which
+run the gamut of small 1-liners to fancy GUI applications, to
+“enterprise” class services).
+\end{notice}
+
+\index{hash-bang}\index{shebang}\index{\#! PROBLEM!!!}
+Unix environments provide a handy way to make your script executable
+on it is own. By putting a \emph{hash bang} (\code{\#!}) on the first line of
+the file, followed by the path to the interpreter, and by changing the
+\emph{executable bit} on the file, you can create a file that can run
+itself.
+
+To tell have the script execute with the Python interpreter found in
+the environment, update your \code{hello.py} file to:
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{}!/usr/bin/env python}
+\PYG{k}{print} \PYG{l+s}{"}\PYG{l+s}{hello world}\PYG{l+s}{"}
+\end{Verbatim}
+
+\begin{notice}{note}{Note:}
+This new first line tells the shell that executes the file to
+run the rest of the file with the \code{\#!/usr/bin/env python}
+executable. (Shell scripts usually start with \code{\#!/bin/bash} or
+\code{\#!/bin/sh}.) Save \code{hello.py} with the new initial line.
+\end{notice}
+
+\chapter{Introduction}
+
+During the 2012-2013 school year, students in the Spectrum classes at Valley View took a class in digital publishing. Along with a discussion of traditional publishing, there was an introduction to digital publishing. The students were encouraged to create their own story to be published digitally. This book is the result of their effort.
+
+\chapter{Ten More Minutes - Melanie Hansen}
+  \markboth{  Ten More Minutes - Melanie Hansen}{  Ten More Minutes - Melanie Hansen}
+
+
+
+It started off as any other day. The alarm clock rang; Lily woke up, got dressed and went downstairs for breakfast. “Hi Lil!” Lily’s mom said cheerfully as she walked into the kitchen. “What do you want for breakfast?”
+
+“Eggs,” Lily replied glumly. She wasn’t thinking about breakfast, she was thinking about the test she failed in math the other day and all the other math tests she failed before that. She was also thinking when the right time to tell her mom. “Mom?” she asked, “Do you think I’m pretty?”
+
+\chapter*{Appendix}
+\addcontentsline{toc}{chapter}{Appendix}
+This is the text of a Appendix. Its title is not numbered in the table of contents. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis justo ut justo porttitor at rutrum libero accumsan. In luctus sodales mi in sollicitudin. In at diam quis purus fringilla volutpat. Praesent sodales condimentum tortor, eget condimentum libero ultrices a. Nullam vitae velit non libero consectetur fermentum nec ac dolor. Suspendisse magna justo, euismod sit amet bibendum id, placerat sed metus. Pellentesque in metus sit amet justo luctus vestibulum. Vestibulum vitae tortor sed lectus tincidunt faucibus nec mattis velit. Sed sollicitudin, lorem vestibulum commodo sagittis, odio purus pretium metus, et luctus orci ligula in est. Sed in faucibus ligula. Mauris laoreet gravida pretium. Curabitur vitae dui vulputate odio rhoncus sagittis ut ut dolor. Praesent imperdiet euismod ligula nec consectetur. Nulla ut dui ut justo tempor vulputate. Proin felis magna, mattis vel cursus vel, fringilla ut dui. Curabitur scelerisque tincidunt laoreet.
+
+Cras malesuada elementum condimentum. Donec lectus eros, mattis eget venenatis ullamcorper, ornare vel massa. Curabitur erat neque, pellentesque at sollicitudin ac, ornare nec sapien. Curabitur in velit sem, sit amet scelerisque libero. Duis vitae euismod diam. Morbi aliquet mauris ac dolor aliquet vel elementum est condimentum. Sed iaculis, nibh in feugiat elementum, dui purus laoreet erat, eget egestas risus tortor vel nisi. Vivamus vehicula purus quis lectus laoreet aliquam placerat metus tempus. Suspendisse bibendum dolor at eros pretium blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis fringilla dui, nec aliquet ante rhoncus at. Proin eget dictum ante. In hac habitasse platea dictumst. Cras bibendum adipiscing odio, vel mollis metus elementum at.
+
+
+\backmatter
+
+\chapter*{Afterward}
+\addcontentsline{toc}{chapter}{Afterward}
+This is the text of a Appendix. Its title is not numbered in the table of contents. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis justo ut justo porttitor at rutrum libero accumsan. In luctus sodales mi in sollicitudin. In at diam quis purus fringilla volutpat. Praesent sodales condimentum tortor, eget condimentum libero ultrices a. Nullam vitae velit non libero consectetur fermentum nec ac dolor. Suspendisse magna justo, euismod sit amet bibendum id, placerat sed metus. Pellentesque in metus sit amet justo luctus vestibulum. Vestibulum vitae tortor sed lectus tincidunt faucibus nec mattis velit. Sed sollicitudin, lorem vestibulum commodo sagittis, odio purus pretium metus, et luctus orci ligula in est. Sed in faucibus ligula. Mauris laoreet gravida pretium. Curabitur vitae dui vulputate odio rhoncus sagittis ut ut dolor. Praesent imperdiet euismod ligula nec consectetur. Nulla ut dui ut justo tempor vulputate. Proin felis magna, mattis vel cursus vel, fringilla ut dui. Curabitur scelerisque tincidunt laoreet.
+
+Cras malesuada elementum condimentum. Donec lectus eros, mattis eget venenatis ullamcorper, ornare vel massa. Curabitur erat neque, pellentesque at sollicitudin ac, ornare nec sapien. Curabitur in velit sem, sit amet scelerisque libero. Duis vitae euismod diam. Morbi aliquet mauris ac dolor aliquet vel elementum est condimentum. Sed iaculis, nibh in feugiat elementum, dui purus laoreet erat, eget egestas risus tortor vel nisi. Vivamus vehicula purus quis lectus laoreet aliquam placerat metus tempus. Suspendisse bibendum dolor at eros pretium blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis fringilla dui, nec aliquet ante rhoncus at. Proin eget dictum ante. In hac habitasse platea dictumst. Cras bibendum adipiscing odio, vel mollis metus elementum at.
+
+% by default index won't appear in toc so have to manually add it
+\clearpage
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+% Design page
+\chapter*{}
+This book was designed in emacs with LaTex using the fonts
+
+\end{document}
